@@ -1,2 +1,13 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div>
+  <h3>Book detail</h3>
+  #ユーザー画像
+  <p><%= image_tag 'no_image.jpg' %></p>
+  <p><%= @book.user.name %></p>
+
+  <p>ショップ名：<%= @book.title %></p>
+  <p><%= @book.body %></p>
+  <% if @book.user == Current.user %>
+    <%= link_to "Destroy", book_path(@book), data: { turbo_method: :delete } %>
+  <% end %>
+
+</div>
