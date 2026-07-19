@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :books, only: [:new, :index, :show, :create, :destroy]
-  
+  root to: "home#top"
 
-  resources :users, only: [:new, :create] , path_names: { new: 'sign_in' }
+  resources :users, only: [:new, :create, :show, :edit , :update, :index] , path_names: { new: 'sign_in' }
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
